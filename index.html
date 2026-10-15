@@ -4,199 +4,418 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#102e50">
-<title>Boreal | Daniel Canepa Propiedades</title>
+<meta name="theme-color" content="#102c49">
+<meta name="description" content="Conocé Boreal, elegí tu lote y simulá alternativas de financiación con Daniel Canepa Propiedades.">
+<title>Boreal | Simulá tu lote - Daniel Canepa</title>
 <style>
-:root{--blue:#102e50;--light:#edf3f8;--gold:#c8a96b;--text:#203047}
+:root{
+  --navy:#102c49;
+  --navy2:#1b4163;
+  --gold:#c8a66b;
+  --cream:#f6f4ef;
+  --white:#fff;
+  --text:#26374a;
+  --muted:#718096;
+  --line:#e2e7ec;
+  --green:#26734d;
+}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
-header{background:var(--blue);color:white;padding:22px 6%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:25px;font-weight:800;letter-spacing:4px}
+a{color:inherit}
+button,input,select{font:inherit}
+header{
+  background:var(--navy);color:#fff;padding:20px 6%;
+  display:flex;justify-content:space-between;align-items:center;gap:20px
+}
+.logo{font-size:27px;font-weight:800;letter-spacing:5px}
 .logo small{display:block;font-size:10px;letter-spacing:2px;margin-top:5px;font-weight:400}
-.brand{font-size:12px;letter-spacing:1px;text-align:right}
-.hero{background:linear-gradient(90deg,rgba(9,32,55,.92),rgba(9,32,55,.4)),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover;color:white;padding:100px 7% 110px}
-.hero-content{max-width:680px}
-.eyebrow{color:#e1c58f;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
-h1{font-size:clamp(38px,6vw,68px);line-height:1.06;margin:20px 0}
-.hero p{font-size:18px;line-height:1.7;max-width:520px;color:#e6edf5}
-.btn{display:inline-block;background:var(--gold);color:#172b40;padding:16px 23px;border:0;border-radius:5px;font-weight:bold;text-decoration:none;cursor:pointer;font-size:15px}
-section{padding:65px 6%}
-.section-title{text-align:center;max-width:700px;margin:0 auto 35px}
-.section-title h2{font-size:clamp(27px,4vw,40px);color:var(--blue);margin:12px 0}
-.section-title p{line-height:1.7;color:#667487}
-.simulator{max-width:960px;margin:auto;background:white;border:1px solid #e0e6ed;border-radius:16px;box-shadow:0 15px 50px #102e5012;overflow:hidden}
-.sim-head{background:var(--blue);color:white;padding:25px 30px}
-.sim-head h2{margin:0 0 8px;font-size:25px}
-.sim-head p{margin:0;color:#dce7f2}
-.sim-body{padding:30px}
+.brand{text-align:right;font-size:12px;line-height:1.6;letter-spacing:1px}
+.brand strong{display:block;font-size:13px}
+.hero{
+  min-height:520px;display:flex;align-items:center;
+  padding:80px 7%;color:white;
+  background:linear-gradient(90deg,rgba(9,30,49,.92),rgba(9,30,49,.48)),
+  url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=2000&q=85') center/cover
+}
+.hero-content{max-width:740px}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:bold}
+h1{font-size:clamp(42px,6vw,74px);line-height:1.03;letter-spacing:-2px;margin:22px 0}
+.hero p{font-size:18px;line-height:1.8;color:#e5ebf0;max-width:570px}
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:16px 23px;background:var(--gold);color:#182d41;
+  text-decoration:none;border:0;border-radius:4px;font-weight:bold;
+  cursor:pointer;transition:filter .2s,transform .2s
+}
+.button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.button-outline{background:transparent;border:1px solid var(--navy);color:var(--navy)}
+.hero .button{margin-top:15px}
+.trustbar{display:flex;justify-content:center;flex-wrap:wrap;gap:32px;padding:21px 5%;background:var(--cream);color:var(--navy);font-size:12px;font-weight:bold}
+.trustbar span{display:flex;align-items:center;gap:9px}
+section{padding:76px 6%}
+.section-heading{text-align:center;max-width:720px;margin:0 auto 38px}
+.section-heading h2{font-size:clamp(30px,4vw,43px);letter-spacing:-1px;color:var(--navy);margin:13px 0}
+.section-heading p{color:var(--muted);line-height:1.8}
+.simulator-section{background:#fff}
+.simulator{max-width:1000px;margin:auto;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 55px rgba(16,44,73,.09)}
+.sim-header{background:var(--navy);color:white;padding:27px 32px}
+.sim-header h3{font-size:25px;margin:0 0 9px}
+.sim-header p{margin:0;color:#d9e4ed;line-height:1.6;font-size:14px}
+.sim-body{padding:32px}
 .field{margin-bottom:28px}
-label{display:block;font-weight:bold;margin-bottom:12px}
-select,input{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:7px;font-size:16px;background:white;color:var(--text)}
-.range-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
-.range-row strong{color:var(--blue);font-size:22px}
-input[type=range]{padding:0;accent-color:var(--blue);cursor:pointer}
-.hints{display:flex;justify-content:space-between;font-size:12px;color:#778397;margin-top:7px}
-.results{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.result{padding:22px;background:var(--light);border-radius:10px}
-.result span{display:block;font-size:13px;color:#64748b;margin-bottom:10px}
-.result strong{display:block;font-size:clamp(22px,4vw,32px);color:var(--blue);overflow-wrap:anywhere}
-.result.primary{background:var(--blue)}
-.result.primary span,.result.primary strong{color:white}
-.disclaimer{font-size:12px;line-height:1.6;color:#6b7788;margin:20px 0}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.actions .btn{flex:1;text-align:center}
-.btn-outline{background:white;border:1px solid var(--blue);color:var(--blue)}
-.features{background:#f5f7fa}
-.cards{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:white;padding:25px;border-radius:12px;border:1px solid #e4e9ef}
-.card h3{color:var(--blue)}
-.card p{line-height:1.7;color:#667487;font-size:14px}
-footer{background:#0b2139;color:white;text-align:center;padding:35px 20px}
-footer p{color:#ccd7e3;font-size:13px;line-height:1.7}
-@media(max-width:650px){header{padding:18px 5%}.logo{font-size:21px}.brand{font-size:10px}.hero{padding:75px 6%}.hero p{font-size:16px}section{padding:48px 5%}.sim-body{padding:20px}.sim-head{padding:23px 20px}.results{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.actions{flex-direction:column}.actions .btn{width:100%}}
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:12px;color:var(--navy)}
+select{width:100%;padding:15px;border:1px solid #ccd5df;border-radius:6px;background:#fff;color:var(--text)}
+.range-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.range-top label{margin:0}
+.range-value{font-weight:bold;color:var(--navy);font-size:clamp(17px,3vw,23px);text-align:right}
+input[type=range]{width:100%;accent-color:var(--navy);cursor:pointer}
+.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:8px}
+.hint{font-size:12px;color:var(--muted);line-height:1.6;margin-top:9px}
+.quick-plans{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:14px}
+.quick-plans button{background:#fff;border:1px solid var(--line);padding:11px 5px;border-radius:5px;cursor:pointer;color:var(--navy);font-size:12px;font-weight:bold}
+.quick-plans button.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:10px}
+.result{padding:23px;background:#f1f4f7;border-radius:8px;min-width:0}
+.result span{display:block;font-size:12px;color:var(--muted);margin-bottom:12px}
+.result strong{display:block;color:var(--navy);font-size:clamp(21px,3.6vw,31px);overflow-wrap:anywhere}
+.result.primary{background:var(--navy)}
+.result.primary span,.result.primary strong{color:#fff}
+.result.primary strong{font-size:clamp(27px,4vw,38px)}
+.result-note{font-size:11px;color:var(--muted);line-height:1.6;margin-top:7px}
+.total-box{border-top:1px solid var(--line);margin-top:23px;padding-top:20px;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.total-box span{font-size:13px;color:var(--muted)}
+.total-box strong{font-size:23px;color:var(--navy);text-align:right}
+.disclaimer{font-size:11px;line-height:1.8;color:#68788a;margin:22px 0}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.actions .button{flex:1}
+.info-strip{background:var(--cream);padding:22px;border-radius:8px;margin-top:24px}
+.info-strip strong{display:block;color:var(--navy);margin-bottom:8px}
+.info-strip p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
+.features{background:#f7f8fa}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1050px;margin:auto}
+.card{background:#fff;border:1px solid var(--line);padding:28px;border-radius:9px}
+.card .number{color:var(--gold);font-size:13px;font-weight:bold;letter-spacing:2px}
+.card h3{color:var(--navy);font-size:19px}
+.card p{color:var(--muted);font-size:14px;line-height:1.8}
+.faq{max-width:800px;margin:auto}
+details{padding:20px 0;border-bottom:1px solid var(--line)}
+summary{cursor:pointer;color:var(--navy);font-weight:bold;line-height:1.5}
+details p{color:var(--muted);font-size:14px;line-height:1.8}
+.contact{background:var(--navy);color:#fff;text-align:center;padding:65px 6%}
+.contact h2{font-size:clamp(29px,4vw,42px);margin:12px 0}
+.contact p{color:#dce5ec;line-height:1.8;max-width:570px;margin:0 auto 25px}
+footer{background:#0a2036;color:#fff;text-align:center;padding:30px 20px}
+footer p{font-size:11px;color:#c3d0dc;line-height:1.8}
+footer a{color:#fff}
+@media(max-width:700px){
+ header{padding:18px 5%}.logo{font-size:22px;letter-spacing:3px}
+ .brand{font-size:10px}.brand strong{font-size:11px}
+ .hero{min-height:470px;padding:65px 6%}
+ .hero p{font-size:16px}
+ .trustbar{gap:15px;font-size:10px}
+ section{padding:54px 5%}
+ .sim-header{padding:24px 20px}.sim-body{padding:20px}
+ .results{grid-template-columns:1fr}
+ .quick-plans{grid-template-columns:repeat(2,1fr)}
+ .cards{grid-template-columns:1fr}
+ .total-box{align-items:flex-start;flex-direction:column}
+ .total-box strong{text-align:left}
+ .actions{flex-direction:column}
+ .actions .button{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
 <header>
   <div class="logo">BOREAL<small>DESARROLLO INMOBILIARIO</small></div>
-  <div class="brand">DANIEL CANEPA<br>PROPIEDADES</div>
+  <div class="brand"><strong>DANIEL CANEPA</strong>PROPIEDADES</div>
 </header>
 
-<div class="hero">
-  <div class="hero-content">
-    <div class="eyebrow">Tu próximo proyecto empieza acá</div>
-    <h1>Encontrá tu lugar.<br>Construí tu futuro.</h1>
-    <p>Elegí tu lote en Boreal y explorá distintas alternativas de financiación de manera simple y transparente.</p>
-    <a class="btn" href="#simulador">SIMULAR MI LOTE ↗</a>
-  </div>
-</div>
-
-<section id="simulador">
-  <div class="section-title">
-    <div class="eyebrow">Tu próximo paso</div>
-    <h2>Simulá tu financiación</h2>
-    <p>Elegí las dimensiones de tu lote y modificá el plazo para conocer una estimación de tu plan.</p>
-  </div>
-
-  <div class="simulator">
-    <div class="sim-head">
-      <h2>Tu lote, tu plan</h2>
-      <p>Personalizá tu simulación en segundos.</p>
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Tu próximo proyecto comienza acá</div>
+      <h1>Un lugar propio.<br>Un futuro por construir.</h1>
+      <p>Descubrí las opciones de lotes de Boreal y explorá distintas alternativas de financiación con el acompañamiento de Daniel Canepa Propiedades.</p>
+      <a class="button" href="#simulador">SIMULAR MI LOTE <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="sim-body">
-      <div class="field">
-        <label for="lote">1. Elegí las dimensiones</label>
-        <select id="lote">
-          <option value="312">Lote 12 × 26 m · 312 m²</option>
-          <option value="432">Lote 12 × 36 m · 432 m²</option>
-        </select>
-      </div>
-      <div class="field">
-        <div class="range-row">
-          <label for="anticipo" style="margin:0">2. Anticipo</label>
-          <strong id="anticipoTexto">$ 4.500.000</strong>
-        </div>
-        <input id="anticipo" type="range" min="4500000" max="9000000" step="100000" value="4500000">
-        <div class="hints"><span>Anticipo base</span><span>Mayor anticipo</span></div>
-      </div>
-      <div class="field">
-        <div class="range-row">
-          <label for="cuotas" style="margin:0">3. Cantidad de cuotas</label>
-          <strong id="cuotasTexto">120 cuotas</strong>
-        </div>
-        <input id="cuotas" type="range" min="120" max="240" step="12" value="120">
-        <div class="hints"><span>120 cuotas</span><span>240 cuotas</span></div>
+  </section>
+
+  <div class="trustbar">
+    <span>◆ Elegí tu lote</span>
+    <span>◆ Explorá tu financiación</span>
+    <span>◆ Consultá con Canepa</span>
+  </div>
+
+  <section class="simulator-section" id="simulador">
+    <div class="section-heading">
+      <div class="eyebrow">Encontrá tu alternativa</div>
+      <h2>Simulá tu financiación</h2>
+      <p>Elegí la superficie, definí tu anticipo y explorá los distintos plazos disponibles en esta simulación.</p>
+    </div>
+
+    <div class="simulator">
+      <div class="sim-header">
+        <h3>Tu lote, tu plan</h3>
+        <p>Modificá las opciones y mirá cómo cambian los importes al instante.</p>
       </div>
 
-      <div class="results">
-        <div class="result">
-          <span>Anticipo seleccionado</span>
-          <strong id="anticipoResultado">$ 4.500.000</strong>
+      <div class="sim-body">
+        <div class="field">
+          <label for="lote">1. ¿Qué lote te interesa?</label>
+          <select id="lote">
+            <option value="312">12 × 26 metros · 312 m²</option>
+            <option value="432">12 × 36 metros · 432 m²</option>
+          </select>
         </div>
-        <div class="result primary">
-          <span>Cuota mensual estimada</span>
-          <strong id="cuotaResultado">$ 460.000</strong>
+
+        <div class="field">
+          <div class="range-top">
+            <label for="anticipo">2. Elegí tu anticipo</label>
+            <output class="range-value" id="anticipoTexto" for="anticipo">$ 4.500.000</output>
+          </div>
+          <input id="anticipo" type="range" min="2000000" max="20000000" step="100000" value="4500000">
+          <div class="range-labels"><span>$ 2.000.000</span><span id="anticipoMaxTexto">$ 20.000.000</span></div>
+          <p class="hint">El anticipo mínimo mostrado es una opción de simulación, sujeta a aprobación comercial.</p>
         </div>
-        <div class="result">
-          <span>Plazo de financiación</span>
-          <strong id="plazoResultado">120 meses</strong>
+
+        <div class="field">
+          <div class="range-top">
+            <label for="cuotas">3. Elegí el plazo</label>
+            <output class="range-value" id="cuotasTexto" for="cuotas">120 cuotas</output>
+          </div>
+          <input id="cuotas" type="range" min="120" max="240" step="12" value="120">
+          <div class="range-labels"><span>120 cuotas</span><span>240 cuotas</span></div>
+          <div class="quick-plans" id="planesRapidos">
+            <button type="button" data-meses="120" class="active">120 cuotas</button>
+            <button type="button" data-meses="144">144 cuotas</button>
+            <button type="button" data-meses="180">180 cuotas</button>
+            <button type="button" data-meses="240">240 cuotas</button>
+          </div>
+          <p class="hint" id="recargoTexto">Plazo base de referencia.</p>
         </div>
-        <div class="result">
-          <span>Total nominal estimado</span>
+
+        <div class="results" aria-live="polite">
+          <div class="result">
+            <span>Anticipo seleccionado</span>
+            <strong id="anticipoResultado">$ 4.500.000</strong>
+          </div>
+          <div class="result primary">
+            <span>Cuota mensual estimada</span>
+            <strong id="cuotaResultado">$ 460.000</strong>
+            <div class="result-note" style="color:#dce5ed">Importe estimado en pesos</div>
+          </div>
+          <div class="result">
+            <span>Plazo seleccionado</span>
+            <strong id="plazoResultado">120 meses</strong>
+          </div>
+          <div class="result">
+            <span>Recargo ilustrativo por plazo</span>
+            <strong id="recargoImporte">0%</strong>
+          </div>
+        </div>
+
+        <div class="total-box">
+          <span>Total nominal estimado del plan</span>
           <strong id="totalResultado">$ 59.700.000</strong>
         </div>
-      </div>
 
-      <p class="disclaimer">Simulación ilustrativa. Los planes de referencia son: lote 12 × 26 m, anticipo de $4.500.000 más 120 cuotas de $460.000; lote 12 × 36 m, anticipo de $5.500.000 más 120 cuotas de $511.000. Los plazos extendidos se calculan distribuyendo proporcionalmente el monto financiado de referencia, sin intereses ni actualización. No constituyen ofertas comerciales aprobadas. Consultá las condiciones, disponibilidad y precio final con la inmobiliaria.</p>
+        <p class="disclaimer">
+          IMPORTANTE: esta herramienta presenta simulaciones matemáticas orientativas, no ofertas comerciales definitivas. Los importes de referencia son: lote de 312 m², anticipo de $4.500.000 más 120 cuotas de $460.000; lote de 432 m², anticipo de $5.500.000 más 120 cuotas de $511.000. Los recargos para plazos mayores son parámetros de prueba, no aprobados por la desarrolladora. No se contemplan indexación, intereses adicionales, impuestos, gastos ni otros cargos. La financiación, el anticipo mínimo, la disponibilidad y el precio final deben confirmarse con Daniel Canepa Propiedades.
+        </p>
 
-      <div class="actions">
-        <a class="btn" id="whatsapp" href="#" target="_blank" rel="noopener">CONSULTAR POR WHATSAPP ↗</a>
-        <button class="btn btn-outline" onclick="window.print()">GUARDAR SIMULACIÓN</button>
+        <div class="actions">
+          <a class="button" id="whatsapp" href="https://wa.me/?text=Hola%2C%20quiero%20consultar%20por%20Boreal" target="_blank" rel="noopener">CONSULTAR POR WHATSAPP ↗</a>
+          <button class="button button-outline" id="imprimir" type="button">GUARDAR / IMPRIMIR</button>
+        </div>
+
+        <div class="info-strip">
+          <strong>¿Querés conocer las condiciones reales?</strong>
+          <p>Enviá tu simulación al equipo comercial. Te podrán confirmar las opciones disponibles y las condiciones de financiación vigentes.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="features">
-  <div class="section-title">
-    <div class="eyebrow">Boreal</div>
-    <h2>El comienzo de algo propio</h2>
-    <p>Conocé las opciones disponibles y encontrá el lote que se adapte a tu proyecto.</p>
-  </div>
-  <div class="cards">
-    <div class="card"><h3>Elegí tu lote</h3><p>Compará superficies y consultá qué opciones están disponibles.</p></div>
-    <div class="card"><h3>Explorá tu plan</h3><p>Probá distintos plazos y visualizá estimaciones de cuotas.</p></div>
-    <div class="card"><h3>Hablá con Canepa</h3><p>Recibí asesoramiento para conocer las condiciones vigentes.</p></div>
-  </div>
-</section>
+  <section class="features">
+    <div class="section-heading">
+      <div class="eyebrow">Desarrollo Boreal</div>
+      <h2>Empezá a planificar tu próximo paso</h2>
+      <p>Conocé las opciones de terrenos y recibí asesoramiento para encontrar la alternativa que mejor se adapte a tu proyecto.</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="number">01 / ELEGÍ</div>
+        <h3>Encontrá tu lote</h3>
+        <p>Compará las dos superficies de referencia y consultá por disponibilidad y ubicación de cada lote.</p>
+      </article>
+      <article class="card">
+        <div class="number">02 / SIMULÁ</div>
+        <h3>Explorá alternativas</h3>
+        <p>Modificá el anticipo y el plazo para entender cómo varían los importes estimados.</p>
+      </article>
+      <article class="card">
+        <div class="number">03 / CONSULTÁ</div>
+        <h3>Hablá con Canepa</h3>
+        <p>Recibí información sobre precios vigentes, condiciones comerciales y disponibilidad.</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-heading">
+      <div class="eyebrow">Información útil</div>
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>¿Puedo elegir un anticipo diferente?</summary>
+        <p>El simulador permite explorar anticipos desde $2.000.000. El importe mínimo aceptado y sus condiciones deben ser confirmados por el equipo comercial antes de realizar una operación.</p>
+      </details>
+      <details>
+        <summary>¿Por qué cambia la cuota si elijo más meses?</summary>
+        <p>La simulación aplica un porcentaje ilustrativo adicional al saldo financiado para los plazos mayores. Los porcentajes reales deben ser definidos y aprobados por la desarrolladora.</p>
+      </details>
+      <details>
+        <summary>¿Los importes que aparecen son definitivos?</summary>
+        <p>No. Son estimaciones basadas en valores de referencia. Consultá con Daniel Canepa Propiedades para verificar el precio final, la disponibilidad y las condiciones vigentes.</p>
+      </details>
+      <details>
+        <summary>¿Cómo consulto por un lote?</summary>
+        <p>Usá el botón de WhatsApp para enviar las opciones seleccionadas y solicitar asesoramiento comercial.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="eyebrow">Daniel Canepa Propiedades</div>
+    <h2>Tu próximo proyecto empieza con una consulta.</h2>
+    <p>Contanos qué lote te interesa y te ayudamos a conocer las opciones disponibles.</p>
+    <a class="button" href="#simulador">VOLVER AL SIMULADOR ↑</a>
+  </section>
+</main>
 
 <footer>
   <div class="logo">BOREAL</div>
-  <p>Comercializa Daniel Canepa Propiedades<br>Consultá disponibilidad y condiciones comerciales vigentes.</p>
+  <p>Comercializa Daniel Canepa Propiedades.<br>Precios y condiciones sujetos a confirmación comercial.<br>Las imágenes utilizadas son ilustrativas y no representan necesariamente el desarrollo.</p>
 </footer>
 
 <script>
-const datos = {
-  "312": {nombre:"Lote 12 × 26 m",superficie:312,anticipo:4500000,cuota:460000},
-  "432": {nombre:"Lote 12 × 36 m",superficie:432,anticipo:5500000,cuota:511000}
+/*
+ CONFIGURACIÓN COMERCIAL DE PRUEBA
+ Modificá estos valores solamente cuando la desarrolladora confirme la política.
+ Los porcentajes de plazo son ilustrativos, NO aprobados.
+*/
+const CONFIG = {
+  anticipoMinimo: 2000000,
+  anticipoMaximo: 20000000,
+  pasoAnticipo: 100000,
+  recargosPorMeses: {
+    120: 0,
+    132: 0.05,
+    144: 0.10,
+    156: 0.15,
+    168: 0.20,
+    180: 0.25,
+    192: 0.30,
+    204: 0.35,
+    216: 0.40,
+    228: 0.45,
+    240: 0.50
+  },
+  whatsapp: "" // Agregar número oficial con código de país y área, sin + ni espacios.
 };
-const moneda = n => "$ " + Math.round(n).toLocaleString("es-AR");
-const lote = document.getElementById("lote");
-const anticipo = document.getElementById("anticipo");
-const cuotas = document.getElementById("cuotas");
-let numeroWhatsApp = ""; // Reemplazar por el WhatsApp oficial, con código de país y área.
 
-function actualizar(){
-  const d = datos[lote.value];
-  anticipo.min = d.anticipo;
-  anticipo.max = d.anticipo * 2;
-  anticipo.step = 100000;
-  if(Number(anticipo.value) < d.anticipo) anticipo.value = d.anticipo;
-  if(Number(anticipo.value) > d.anticipo*2) anticipo.value = d.anticipo*2;
+const LOTES = {
+  "312": {
+    nombre: "Lote de 12 × 26 metros",
+    superficie: 312,
+    anticipoReferencia: 4500000,
+    cuotaReferencia: 460000
+  },
+  "432": {
+    nombre: "Lote de 12 × 36 metros",
+    superficie: 432,
+    anticipoReferencia: 5500000,
+    cuotaReferencia: 511000
+  }
+};
 
-  const inicial = Number(anticipo.value);
-  const cantidad = Number(cuotas.value);
-  const financiadoBase = d.cuota * 120;
-  const cuotaCalculada = Math.max(0,(financiadoBase - (inicial-d.anticipo))/cantidad);
-  const total = inicial + cuotaCalculada*cantidad;
+const $ = id => document.getElementById(id);
+const moneda = valor => "$ " + Math.round(valor).toLocaleString("es-AR");
+const porcentaje = valor => Math.round(valor * 100) + "%";
 
-  document.getElementById("anticipoTexto").textContent = moneda(inicial);
-  document.getElementById("anticipoResultado").textContent = moneda(inicial);
-  document.getElementById("cuotasTexto").textContent = cantidad+" cuotas";
-  document.getElementById("cuotaResultado").textContent = moneda(cuotaCalculada);
-  document.getElementById("plazoResultado").textContent = cantidad+" meses";
-  document.getElementById("totalResultado").textContent = moneda(total);
+const loteInput = $("lote");
+const anticipoInput = $("anticipo");
+const cuotasInput = $("cuotas");
 
-  const mensaje = `Hola, quiero consultar por Boreal. Me interesa el ${d.nombre} (${d.superficie} m²). Simulación: anticipo ${moneda(inicial)}, ${cantidad} cuotas estimadas de ${moneda(cuotaCalculada)}. ¿Me pueden informar disponibilidad y condiciones vigentes?`;
-  const wa = document.getElementById("whatsapp");
-  wa.href = numeroWhatsApp
-    ? "https://wa.me/"+numeroWhatsApp+"?text="+encodeURIComponent(mensaje)
-    : "https://wa.me/?text="+encodeURIComponent(mensaje);
+function actualizarSimulador() {
+  const lote = LOTES[loteInput.value];
+  const anticipo = Number(anticipoInput.value);
+  const meses = Number(cuotasInput.value);
+
+  // Precio nominal de referencia: anticipo base + 120 cuotas originales.
+  const precioReferencia =
+    lote.anticipoReferencia + lote.cuotaReferencia * 120;
+
+  // El anticipo elegido se descuenta del precio de referencia.
+  const saldoBase = Math.max(0, precioReferencia - anticipo);
+
+  // Los plazos más largos aplican un recargo ilustrativo al saldo.
+  const recargo = CONFIG.recargosPorMeses[meses] ?? 0;
+  const saldoConRecargo = saldoBase * (1 + recargo);
+  const cuotaEstimada = saldoConRecargo / meses;
+  const totalPlan = anticipo + saldoConRecargo;
+
+  $("anticipoTexto").textContent = moneda(anticipo);
+  $("anticipoResultado").textContent = moneda(anticipo);
+  $("cuotasTexto").textContent = meses + " cuotas";
+  $("plazoResultado").textContent = meses + " meses";
+  $("cuotaResultado").textContent = moneda(cuotaEstimada);
+  $("totalResultado").textContent = moneda(totalPlan);
+  $("recargoImporte").textContent = porcentaje(recargo);
+
+  $("recargoTexto").textContent = recargo === 0
+    ? "Plazo base de referencia: sin recargo ilustrativo."
+    : "Recargo de prueba del " + porcentaje(recargo) +
+      " sobre el saldo financiado. Pendiente de aprobación comercial.";
+
+  document.querySelectorAll("#planesRapidos button").forEach(b => {
+    const activo = Number(b.dataset.meses) === meses;
+    b.classList.toggle("active", activo);
+    b.setAttribute("aria-pressed", String(activo));
+  });
+
+  const mensaje =
+    "Hola, quiero consultar por Boreal con Daniel Canepa Propiedades.\n" +
+    "Lote: " + lote.nombre + " (" + lote.superficie + " m²).\n" +
+    "Anticipo seleccionado: " + moneda(anticipo) + ".\n" +
+    "Plazo simulado: " + meses + " cuotas.\n" +
+    "Cuota mensual estimada: " + moneda(cuotaEstimada) + ".\n" +
+    "Total nominal estimado: " + moneda(totalPlan) + ".\n" +
+    "Entiendo que es una simulación orientativa y quisiera conocer las condiciones comerciales vigentes.";
+
+  $("whatsapp").href = CONFIG.whatsapp
+    ? "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(mensaje)
+    : "https://wa.me/?text=" + encodeURIComponent(mensaje);
 }
-lote.addEventListener("change",actualizar);
-anticipo.addEventListener("input",actualizar);
-cuotas.addEventListener("input",actualizar);
-actualizar();
+
+loteInput.addEventListener("change", actualizarSimulador);
+anticipoInput.addEventListener("input", actualizarSimulador);
+cuotasInput.addEventListener("input", actualizarSimulador);
+
+document.querySelectorAll("#planesRapidos button").forEach(b => {
+  b.addEventListener("click", () => {
+    cuotasInput.value = b.dataset.meses;
+    actualizarSimulador();
+  });
+});
+
+$("imprimir").addEventListener("click", () => window.print());
+
+actualizarSimulador();
 </script>
 </body>
 </html>
