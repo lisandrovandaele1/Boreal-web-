@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102e50">
+<title>Boreal | Daniel Canepa Propiedades</title>
+<style>
+:root{--blue:#102e50;--light:#edf3f8;--gold:#c8a96b;--text:#203047}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
+header{background:var(--blue);color:white;padding:22px 6%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:25px;font-weight:800;letter-spacing:4px}
+.logo small{display:block;font-size:10px;letter-spacing:2px;margin-top:5px;font-weight:400}
+.brand{font-size:12px;letter-spacing:1px;text-align:right}
+.hero{background:linear-gradient(90deg,rgba(9,32,55,.92),rgba(9,32,55,.4)),url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=85') center/cover;color:white;padding:100px 7% 110px}
+.hero-content{max-width:680px}
+.eyebrow{color:#e1c58f;text-transform:uppercase;letter-spacing:3px;font-size:12px;font-weight:bold}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.06;margin:20px 0}
+.hero p{font-size:18px;line-height:1.7;max-width:520px;color:#e6edf5}
+.btn{display:inline-block;background:var(--gold);color:#172b40;padding:16px 23px;border:0;border-radius:5px;font-weight:bold;text-decoration:none;cursor:pointer;font-size:15px}
+section{padding:65px 6%}
+.section-title{text-align:center;max-width:700px;margin:0 auto 35px}
+.section-title h2{font-size:clamp(27px,4vw,40px);color:var(--blue);margin:12px 0}
+.section-title p{line-height:1.7;color:#667487}
+.simulator{max-width:960px;margin:auto;background:white;border:1px solid #e0e6ed;border-radius:16px;box-shadow:0 15px 50px #102e5012;overflow:hidden}
+.sim-head{background:var(--blue);color:white;padding:25px 30px}
+.sim-head h2{margin:0 0 8px;font-size:25px}
+.sim-head p{margin:0;color:#dce7f2}
+.sim-body{padding:30px}
+.field{margin-bottom:28px}
+label{display:block;font-weight:bold;margin-bottom:12px}
+select,input{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:7px;font-size:16px;background:white;color:var(--text)}
+.range-row{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
+.range-row strong{color:var(--blue);font-size:22px}
+input[type=range]{padding:0;accent-color:var(--blue);cursor:pointer}
+.hints{display:flex;justify-content:space-between;font-size:12px;color:#778397;margin-top:7px}
+.results{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.result{padding:22px;background:var(--light);border-radius:10px}
+.result span{display:block;font-size:13px;color:#64748b;margin-bottom:10px}
+.result strong{display:block;font-size:clamp(22px,4vw,32px);color:var(--blue);overflow-wrap:anywhere}
+.result.primary{background:var(--blue)}
+.result.primary span,.result.primary strong{color:white}
+.disclaimer{font-size:12px;line-height:1.6;color:#6b7788;margin:20px 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.actions .btn{flex:1;text-align:center}
+.btn-outline{background:white;border:1px solid var(--blue);color:var(--blue)}
+.features{background:#f5f7fa}
+.cards{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:white;padding:25px;border-radius:12px;border:1px solid #e4e9ef}
+.card h3{color:var(--blue)}
+.card p{line-height:1.7;color:#667487;font-size:14px}
+footer{background:#0b2139;color:white;text-align:center;padding:35px 20px}
+footer p{color:#ccd7e3;font-size:13px;line-height:1.7}
+@media(max-width:650px){header{padding:18px 5%}.logo{font-size:21px}.brand{font-size:10px}.hero{padding:75px 6%}.hero p{font-size:16px}section{padding:48px 5%}.sim-body{padding:20px}.sim-head{padding:23px 20px}.results{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.actions{flex-direction:column}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">BOREAL<small>DESARROLLO INMOBILIARIO</small></div>
+  <div class="brand">DANIEL CANEPA<br>PROPIEDADES</div>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">Tu próximo proyecto empieza acá</div>
+    <h1>Encontrá tu lugar.<br>Construí tu futuro.</h1>
+    <p>Elegí tu lote en Boreal y explorá distintas alternativas de financiación de manera simple y transparente.</p>
+    <a class="btn" href="#simulador">SIMULAR MI LOTE ↗</a>
+  </div>
+</div>
+
+<section id="simulador">
+  <div class="section-title">
+    <div class="eyebrow">Tu próximo paso</div>
+    <h2>Simulá tu financiación</h2>
+    <p>Elegí las dimensiones de tu lote y modificá el plazo para conocer una estimación de tu plan.</p>
+  </div>
+
+  <div class="simulator">
+    <div class="sim-head">
+      <h2>Tu lote, tu plan</h2>
+      <p>Personalizá tu simulación en segundos.</p>
+    </div>
+    <div class="sim-body">
+      <div class="field">
+        <label for="lote">1. Elegí las dimensiones</label>
+        <select id="lote">
+          <option value="312">Lote 12 × 26 m · 312 m²</option>
+          <option value="432">Lote 12 × 36 m · 432 m²</option>
+        </select>
+      </div>
+      <div class="field">
+        <div class="range-row">
+          <label for="anticipo" style="margin:0">2. Anticipo</label>
+          <strong id="anticipoTexto">$ 4.500.000</strong>
+        </div>
+        <input id="anticipo" type="range" min="4500000" max="9000000" step="100000" value="4500000">
+        <div class="hints"><span>Anticipo base</span><span>Mayor anticipo</span></div>
+      </div>
+      <div class="field">
+        <div class="range-row">
+          <label for="cuotas" style="margin:0">3. Cantidad de cuotas</label>
+          <strong id="cuotasTexto">120 cuotas</strong>
+        </div>
+        <input id="cuotas" type="range" min="120" max="240" step="12" value="120">
+        <div class="hints"><span>120 cuotas</span><span>240 cuotas</span></div>
+      </div>
+
+      <div class="results">
+        <div class="result">
+          <span>Anticipo seleccionado</span>
+          <strong id="anticipoResultado">$ 4.500.000</strong>
+        </div>
+        <div class="result primary">
+          <span>Cuota mensual estimada</span>
+          <strong id="cuotaResultado">$ 460.000</strong>
+        </div>
+        <div class="result">
+          <span>Plazo de financiación</span>
+          <strong id="plazoResultado">120 meses</strong>
+        </div>
+        <div class="result">
+          <span>Total nominal estimado</span>
+          <strong id="totalResultado">$ 59.700.000</strong>
+        </div>
+      </div>
+
+      <p class="disclaimer">Simulación ilustrativa. Los planes de referencia son: lote 12 × 26 m, anticipo de $4.500.000 más 120 cuotas de $460.000; lote 12 × 36 m, anticipo de $5.500.000 más 120 cuotas de $511.000. Los plazos extendidos se calculan distribuyendo proporcionalmente el monto financiado de referencia, sin intereses ni actualización. No constituyen ofertas comerciales aprobadas. Consultá las condiciones, disponibilidad y precio final con la inmobiliaria.</p>
+
+      <div class="actions">
+        <a class="btn" id="whatsapp" href="#" target="_blank" rel="noopener">CONSULTAR POR WHATSAPP ↗</a>
+        <button class="btn btn-outline" onclick="window.print()">GUARDAR SIMULACIÓN</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="section-title">
+    <div class="eyebrow">Boreal</div>
+    <h2>El comienzo de algo propio</h2>
+    <p>Conocé las opciones disponibles y encontrá el lote que se adapte a tu proyecto.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><h3>Elegí tu lote</h3><p>Compará superficies y consultá qué opciones están disponibles.</p></div>
+    <div class="card"><h3>Explorá tu plan</h3><p>Probá distintos plazos y visualizá estimaciones de cuotas.</p></div>
+    <div class="card"><h3>Hablá con Canepa</h3><p>Recibí asesoramiento para conocer las condiciones vigentes.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">BOREAL</div>
+  <p>Comercializa Daniel Canepa Propiedades<br>Consultá disponibilidad y condiciones comerciales vigentes.</p>
+</footer>
+
+<script>
+const datos = {
+  "312": {nombre:"Lote 12 × 26 m",superficie:312,anticipo:4500000,cuota:460000},
+  "432": {nombre:"Lote 12 × 36 m",superficie:432,anticipo:5500000,cuota:511000}
+};
+const moneda = n => "$ " + Math.round(n).toLocaleString("es-AR");
+const lote = document.getElementById("lote");
+const anticipo = document.getElementById("anticipo");
+const cuotas = document.getElementById("cuotas");
+let numeroWhatsApp = ""; // Reemplazar por el WhatsApp oficial, con código de país y área.
+
+function actualizar(){
+  const d = datos[lote.value];
+  anticipo.min = d.anticipo;
+  anticipo.max = d.anticipo * 2;
+  anticipo.step = 100000;
+  if(Number(anticipo.value) < d.anticipo) anticipo.value = d.anticipo;
+  if(Number(anticipo.value) > d.anticipo*2) anticipo.value = d.anticipo*2;
+
+  const inicial = Number(anticipo.value);
+  const cantidad = Number(cuotas.value);
+  const financiadoBase = d.cuota * 120;
+  const cuotaCalculada = Math.max(0,(financiadoBase - (inicial-d.anticipo))/cantidad);
+  const total = inicial + cuotaCalculada*cantidad;
+
+  document.getElementById("anticipoTexto").textContent = moneda(inicial);
+  document.getElementById("anticipoResultado").textContent = moneda(inicial);
+  document.getElementById("cuotasTexto").textContent = cantidad+" cuotas";
+  document.getElementById("cuotaResultado").textContent = moneda(cuotaCalculada);
+  document.getElementById("plazoResultado").textContent = cantidad+" meses";
+  document.getElementById("totalResultado").textContent = moneda(total);
+
+  const mensaje = `Hola, quiero consultar por Boreal. Me interesa el ${d.nombre} (${d.superficie} m²). Simulación: anticipo ${moneda(inicial)}, ${cantidad} cuotas estimadas de ${moneda(cuotaCalculada)}. ¿Me pueden informar disponibilidad y condiciones vigentes?`;
+  const wa = document.getElementById("whatsapp");
+  wa.href = numeroWhatsApp
+    ? "https://wa.me/"+numeroWhatsApp+"?text="+encodeURIComponent(mensaje)
+    : "https://wa.me/?text="+encodeURIComponent(mensaje);
+}
+lote.addEventListener("change",actualizar);
+anticipo.addEventListener("input",actualizar);
+cuotas.addEventListener("input",actualizar);
+actualizar();
+</script>
+</body>
+</html>
